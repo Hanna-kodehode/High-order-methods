@@ -18,17 +18,17 @@ const products = [
 ];
 
 //Array with products of a price below 200
-const lowerPrice = products.filter((product) => product.price < 200); //Filtrerer ut kun dei produkta som kostar under 200
+const lowerPrice = products.filter((product) => product.price < 200); //Chooses only items below 200
 console.log(lowerPrice);
 
 //Array with product names only
-const productNames = products.map((products) => products.name); //Henter ut alle produkt namn
+const productNames = products.map((products) => products.name); //Chooses only product names
 console.log(productNames);
 
 //Electronics
 const electronics = products
-  .filter((product) => product.category === "electronics") //Henter ut alt med kattegorien "electronics"
-  .map((product) => product.name); //Fjerner all info untatt namn på produkt
+  .filter((product) => product.category === "electronics") //Brings us everything with the "electronics" category
+  .map((product) => product.name); //Removes all other info but the name
 
 console.log(electronics);
 
@@ -47,7 +47,7 @@ const clothing = products
 console.log(clothing);
 
 //Are there any products that costs over 1.000?
-const higherPrice = products.some((products) => products.price > 1000); //Sjekkar om det finnes produkt med verdi over 1.000. Dersom ja = true
+const higherPrice = products.some((products) => products.price > 1000); //Checks if anything costs above 1.000. If yes = true
 
 console.log(higherPrice);
 
@@ -55,6 +55,6 @@ console.log(higherPrice);
 const totalPrice = products.reduce(
   (accumulator, product) => accumulator + product.price,
   0
-); //Summerer saman alle prisane.
+); //Finds the total price.
 
 console.log(totalPrice);
